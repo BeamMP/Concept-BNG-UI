@@ -1,0 +1,269 @@
+<div ng-if="!app.shipping" style="font-weight:bold;width:420px;height:auto;position:fixed;padding-left:5px;top:5px;left:5px;font-size:60px;font-family:Roboto;margin:0;background-color:rgba(0,0,0,0.6);color:white;border-radius:0px 0px 10px 0px;"><md-icon class="material-icons">bug_report</md-icon>DEV RELEASE</div>
+
+<div >
+  <div class="mainmenu menu-size menu-column">
+    <!-- title -->
+    <div class="mainmenu-title">
+      <div class="logo-container">
+        <div ng-if="mmCtrl.techLicense" class="logo-tech"></div>
+        <div ng-if="!mmCtrl.techLicense" class="logo-{{:: mmCtrl.product }}"></div>
+      </div>
+      <div class="user-container" ng-click="mmCtrl.handleProfileClick()">
+        <div class="user-container-icon"><img src="" alt=""/></div>
+        <div class="user-container-divider"></div>
+        <div class="user-container-details">
+          <div class="user-container-details-name">{{:: mmCtrl.steamData.playerName }}</div>
+          <div class="user-container-details-show-profile">Show Profile</div>
+        </div>
+      </div>
+    </div>
+    <!-- navigation -->
+    <div class="nav-container">
+      <div class="nav-container-button">
+        <div class="controller-button-large">LB</div>
+      </div>
+      <div class="nav-container-divider"></div>
+      <div class="nav-container-menu">
+        <div class="nav-container-menu-item" bng-blur="true" bng-nav-item="" nav-item-disabled="false" ng-disabled="card.disabled" ng-click="mmCtrl.handleClick(card)" bng-sound-class="" focus-on-hover="false" role="button" tabindex="0" aria-disabled="true" disabled="disabled">
+          CAREER
+        </div>
+        <div class="nav-container-menu-item" bng-sound-class>
+          QUICK PLAY
+        </div>
+        <div class="nav-container-menu-item" bng-sound-class>
+          MULTIPLAYER
+        </div>
+        <div class="nav-container-menu-item" bng-sound-class href="#/menu/mods/repository" ui-sref="menu.mods.repository">
+          MODS
+        </div>
+        <div class="nav-container-menu-item" bng-sound-class href="#/menu/options/graphics">
+          SETTINGS
+        </div>
+      </div>
+      <div class="nav-container-divider"></div>
+      <div class="nav-container-button">
+        <div class="controller-button-large">RB</div>
+      </div>
+    </div>
+
+    <!-- nav page items - CAREER -->
+    <div id="MODE-CAREER">
+
+    </div>
+    <!-- nav page items - QUICK PLAY -->
+    <div id="MODE-QUICK_PLAY">
+      <div class="row">
+        <div class="col-6">
+          <div class="menu-page-header-item" ng-click="mmCtrl.handleClick({targetState: 'menu.levels'})">
+            <div class="menu-page-header-item-title">  
+              <div class="menu-page-header-item-title-icon">
+                
+              </div>  
+              <div class="menu-page-header-item-title-text">
+                FREEROAM
+              </div>
+            </div>
+            <div class="menu-page-header-item-body">
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="menu-page-header-item" ng-click="mmCtrl.handleClick({targetState: 'menu.quickraceOverview'})">
+            <div class="menu-page-header-item-title">  
+              <div class="menu-page-header-item-title-icon">
+                
+              </div>  
+              <div class="menu-page-header-item-title-text">
+                TIME TRIALS
+              </div>
+            </div>
+            <div class="menu-page-header-item-body">
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-3">
+          <div class="menu-page-header-item" ng-click="mmCtrl.handleClick({targetState: 'menu.busRoutes'})">
+            <div class="menu-page-header-item-title">  
+              <div class="menu-page-header-item-title-icon">
+                
+              </div>  
+              <div class="menu-page-header-item-title-text">
+                BUS ROUTES
+              </div>
+            </div>
+            <div class="menu-page-header-item-body">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="menu-page-header-item" ng-click="mmCtrl.handleClick({targetState: 'menu.scenarios'})">
+            <div class="menu-page-header-item-title">  
+              <div class="menu-page-header-item-title-icon">
+                
+              </div>  
+              <div class="menu-page-header-item-title-text">
+                SCENARIOS
+              </div>
+            </div>
+            <div class="menu-page-header-item-body">
+              
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="menu-page-header-item" ng-click="mmCtrl.handleClick({targetState: 'menu.lightrunnerOverview'})">
+            <div class="menu-page-header-item-title">  
+              <div class="menu-page-header-item-title-icon">
+                
+              </div>  
+              <div class="menu-page-header-item-title-text">
+                LIGHT RUNNER
+              </div>
+            </div>
+            <div class="menu-page-header-item-body">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- nav page items - MULTIPLAYER -->
+    <div id="MODE-MULTIPLAYER">
+
+    </div>
+    <!-- nav page items - MODS -->
+    <div id="MODE-MODS">
+
+    </div>
+    <!-- nav page items - SETTINGS -->
+    <div id="MODE-SETTINGS">
+
+    </div>
+    <!-- play modes -->
+    <div class="menu-row menu-row-nowrap" style="display: none;">
+      <!-- big button -->
+      <div class="menu-button menu-button-withicon menu-button-big {{ card.class }}" ng-class="{disabled: mmCtrl.buttons.big.disabled}" bng-blur="true"
+        bng-nav-item nav-item-disabled="{{!mmCtrl.buttons.big.disabled}}" ng-disabled="card.disabled" ng-click="mmCtrl.handleClick(mmCtrl.buttons.big)" bng-sound-class="bng_click_hover_generic"
+        focus-if="true"
+        focus-on-hover
+      >
+        <div class="menu-button-icon" ng-style="{ backgroundImage: 'url(' + mmCtrl.buttons.big.icon +')'}"></div>
+        <span class="menu-button-text">{{mmCtrl.buttons.big.translateid | translate}}</span>
+        <div ng-if="fancyblur" class="fancy-blur">
+          <img-carousel sync="true"></img-carousel>
+        </div>
+      </div>
+      <!-- normal buttons -->
+      <div class="menu-column mainmenu-buttongroups">
+        <div ng-repeat="group in ::mmCtrl.buttons.groups" class="menu-row menu-row-stretch menu-row-nowrap mainmenu-buttons {{ group.class }}">
+          <div ng-repeat="card in group.list" class="menu-button menu-button-withicon menu-button-med {{ card.class }}" bng-blur="true"
+            bng-nav-item nav-item-disabled="{{!card.disabled}}" ng-disabled="card.disabled" ng-click="mmCtrl.handleClick(card)" bng-sound-class="{{card.disabled?'':'bng_click_hover_generic'}}"
+            focus-on-hover="{{!card.disabled}}"
+          >
+            <div class="menu-button-icon" style="background-image: url('{{:: card.icon }}');"></div>
+            <span class="menu-button-text">
+              {{card.translateid | translate}}
+              <span ng-if="card.subtranslateid"><br/>({{:: card.subtranslateid | translate}})</span>
+            </span>
+            <div ng-if="fancyblur" class="fancy-blur">
+              <img-carousel sync="true"></img-carousel>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- bottom buttons -->
+    <div class="mainmenu-buttons menu-row mainmenu-buttons-smwrap">
+      <!-- replays -->
+      <div class="menu-button menu-button-small" ui-sref="menu.replay" bng-blur="true"
+        bng-nav-item bng-sound-class="bng_click_hover_generic" focus-on-hover
+      >
+        <span class="menu-button-text">{{:: 'ui.dashboard.replay' | translate}}</span>
+        <div ng-if="fancyblur" class="fancy-blur">
+          <img-carousel sync="true"></img-carousel>
+        </div>
+      </div>
+      <!-- mods -->
+      <div class="menu-button menu-button-small" ui-sref="menu.mods.local" bng-blur="true"
+        bng-nav-item bng-sound-class="bng_click_hover_generic"
+        ng-class="{'menu-button-bad': mmCtrl.settings.disableModsAfterUpdate}"
+        ng-if="mmCtrl.settings.onlineFeatures === 'disable' || mmCtrl.settings.disableModsAfterUpdate"
+        focus-on-hover
+      >
+        <span class="menu-button-text">
+          {{:: 'ui.mainmenu.mods' | translate}}
+          <small ng-if="mmCtrl.modsTotal !== 0" class="menu-button-subtext" translate="ui.modmanager.numActive" translate-values="{ all: mmCtrl.modsTotal, active: mmCtrl.modsActive}"></small>
+        </span>
+        <div ng-if="fancyblur" class="fancy-blur">
+          <img-carousel sync="true"></img-carousel>
+        </div>
+      </div>
+      <!-- repo -->
+      <div class="menu-button menu-button-small" ui-sref="menu.mods.repository" bng-blur="true"
+        bng-nav-item bng-sound-class="bng_click_hover_generic"
+        ng-if="mmCtrl.settings.onlineFeatures === 'enable' && !mmCtrl.settings.disableModsAfterUpdate"
+        focus-on-hover
+      >
+        <span class="menu-button-text">
+          {{:: 'ui.mainmenu.repo' | translate}}
+          <small ng-if="mmCtrl.modsTotal !== 0" class="menu-button-subtext" translate="ui.modmanager.numActive" translate-values="{ all: mmCtrl.modsTotal, active: mmCtrl.modsActive}"></small>
+        </span>
+        <div ng-if="fancyblur" class="fancy-blur">
+          <img-carousel sync="true"></img-carousel>
+        </div>
+      </div>
+      <!-- news (will open in a browser) -->
+      <!-- <a class="menu-button menu-button-small" href="http-external://go.beamng.com/devblog"
+        bng-nav-item bng-sound-class="bng_click_hover_generic"
+        focus-on-hover
+        >
+        <span ng-class="{'heading-long': (('ui.mainmenu.news' | translate).length) > 5}" >
+          {{:: 'ui.mainmenu.news' | translate}}
+        </span>
+        <small ng-if="dateShort !== undefined">
+          {{:: dateShort}}
+        </small>
+        <div ng-if="fancyblur" class="fancy-blur">
+          <img-carousel sync="true"></img-carousel>
+        </div>
+      </a> -->
+      <!-- credits -->
+      <div class="menu-button menu-button-small" ui-sref="credits" bng-blur="true"
+        bng-nav-item bng-sound-class="bng_click_hover_generic"
+        focus-on-hover
+      >
+        <span class="menu-button-text">{{:: 'ui.mainmenu.credits' | translate}}</span>
+        <div ng-if="fancyblur" class="fancy-blur">
+          <img-carousel sync="true"></img-carousel>
+        </div>
+      </div>
+      <!-- options -->
+      <div class="menu-button menu-button-small" ui-sref="menu.options.graphics" bng-blur="true"
+        bng-nav-item bng-sound-class="bng_click_hover_generic"
+        focus-on-hover
+      >
+        <span class="menu-button-text">{{:: 'ui.mainmenu.options' | translate}}</span>
+        <div ng-if="fancyblur" class="fancy-blur">
+          <img-carousel sync="true"></img-carousel>
+        </div>
+      </div>
+      <!-- exit -->
+      <div class="menu-button menu-button-small menu-button-withicon menu-button-quit" ng-click="quit();" bng-blur="true"
+        bng-nav-item bng-sound-class="bng_click_hover_generic"
+        focus-on-hover
+      >
+        <div class="menu-button-icon" style="background-image: url('/ui/modules/mainmenu/drive/icons/quit.svg');"></div>
+        <span class="menu-button-text">{{:: 'ui.inputActions.general.quit.title' | translate}}</span>
+        <div ng-if="fancyblur" class="fancy-blur">
+          <img-carousel sync="true"></img-carousel>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
